@@ -1,0 +1,141 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<title>Search</title>
+	<script src="https://use.fontawesome.com/releases/v5.0.8/js/all.js"></script>
+	<link href="style_sort.css" rel="stylesheet">
+	
+	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css">
+	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+	<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js"></script>
+	<script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"></script>
+	<style type="text/css">
+		.change{
+			color: #FFBB00;
+		}
+
+		.change:hover{
+			color: #FF6700;
+		}
+		.clickable-row :hover{
+	color:green;
+}
+	</style>
+</head>
+
+<body>
+	
+	<nav class= "navbar navbar-expand-md navbar-expand-sm" style="padding-bottom: 50px">
+        <div class="container-fluid" align="center">
+            <a class = "navbar-brand text" href = "#"  style="color:#FFBB00; ">
+                <img src="images/icons/logo.png" width="120px" height="60px"><br>BEATFINDER
+            </a>
+            <button class="navbar-toggler navbar-light" type = "button" data-toggle = "collapse" data-target = "#navbarResponsive" >
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id = "navbarResponsive">
+                <ul class = "navbar-nav ml-auto" >
+                    <li class = "nav-item">
+                        <a class = "nav-link change" href = "../Home/home.html">HOME</a>
+                    </li>
+                    <li class = "nav-item">
+                        <a class = "nav-link change" href = "../premium/premium.html" >PREMIUM</a>
+                    </li>
+                    <li class = "nav-item">
+                        <a class = "nav-link change" href = "../preference/pref.html" >PREFERENCE</a>
+					</li>
+					<li class = "nav-item">
+                        <a class = "nav-link change" href = "../MusicPlayer/MusicPlayer.php" >FIND-BEAT</a>
+                    </li>
+                    <li class = "nav-item">
+                        <a class = "nav-link change" href = "../preference/about.html"  >ABOUT US</a>
+                    </li>
+                </ul>
+                <P></P><P></P>
+            </div>
+        </div>
+    </nav>
+
+    <div class="container-fluid padding">
+		<div class="row padding">
+			
+		</div>
+		<div class="row padding" style="padding-left: 20px">
+			<div class="col-sm-5 col-md-5">
+					<iframe width="525" height="335" id="1"
+					src="https://www.youtube.com/embed/tgbNymZ7vqY">
+					</iframe>
+			</div>
+			
+			<div class="col-sm-7 col-md-7">
+				<div class="sorted">
+					<div class="container">
+					<div class="row">
+						<div class="col-md-6 col-sm-6" style="padding-left: 20px">
+							<input id="search" type="text" class="input" style="width:150%;color:black;display:block;border:none;padding:20px 20px 20px 20px;border-radius:25px;background:rgba(255,255,255,.5);"
+							placeholder="search songs" onfocus="this.fetch">
+							
+						</br>
+						</div>
+						<div class="col-md-6 col-sm-6">
+						</div>
+					</div>
+						<div id="Filtered">
+						</div>
+				</div>
+			
+			</div>
+</body>
+</html>
+
+
+<script>
+	$(document).ready(function () {
+   $("#search").keyup(display_table);
+
+});
+function display_table(){
+		$.ajax({
+			type:"GET",
+			url:"../dataset/music_data.csv",
+			dataType:"text",
+			success:function(data)
+			{
+				var music_data = data.split(/\r?\n|\r/);
+				var table_data = '<table class="table1 table table-hover"><thead class="table1"><tr><th class="tcol">Song Name</th><th class="tcol">Artist Name</th><th class="tcol">Genre</th></tr></thead><tbody class="table1 tbody">';
+				var count=1;
+				while(count<709)
+				{
+					var cell_data = music_data[count].split(",");
+					table_data += '<tr class="clickable-row" data-href='+cell_data[3]+'>';
+					if(cell_data[0].toLowerCase().indexOf($("#search").val()) != -1 || cell_data[1].toLowerCase().indexOf($("#search").val()) != -1 ||cell_data[2].toLowerCase().indexOf($("#search").val()) != -1 ){
+
+					for(var cell_count=0; cell_count<3; cell_count++)
+					{
+						
+						table_data += '<td>'+cell_data[cell_count]+'</td>';
+						
+					}
+					table_data += '</tr>';
+					}
+					count+=1;
+				}
+				table_data += '</tbody>';
+				table_data += '</table>';
+				$('#Filtered').html(table_data);
+				activate_fn();
+			}
+		});
+}
+</script>
+<script>
+function activate_fn()
+{
+		$(".clickable-row").click(function() {
+			var a = $(this).data("href");
+			$("iframe").attr("src","https://www.youtube.com/embed/"+a); 
+		});
+}
+</script>

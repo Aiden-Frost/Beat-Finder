@@ -1,0 +1,186 @@
+body{
+	margin:0;
+	
+	background-image:url("img/background.jpg");
+	background-position: center;
+	background-repeat: no-repeat;
+	background-attachment: fixed;
+	background-size: cover;
+	font:600 16px/18px 'Open Sans',sans-serif;
+}
+.navbar{
+	position: fixed !important;
+	top: 0;
+	left: 0;
+	right: 0;
+	padding-top: 15px;
+	box-shadow: 0px 0px 8px 0px;
+	-webkit-box-shadow: 0px 0px 8px 0px;
+	-moz-box-shadow: 0px 0px 8px 0px;
+	background-color: rgba(0,0,0,0.3) !important;
+	width: 100%;
+	z-index: 100;
+	text-align: center;
+  }
+  .navbar-nav>li>a {
+	  color:#fff !important;
+	  font-weight: bold;
+	  font-family: sans-serif;
+  }
+  
+  
+  .navbar-nav>li>a:hover {
+	  color: blueviolet !important;
+  }
+  .navbar-nav li{
+	padding-right: 20px;
+  }
+  .nav-link{
+	font-size:  1.1em !important;
+  }
+
+  select option {
+
+	font-family: Arial, Helvetica, sans-serif;
+	font-size: 18px;
+	background-color: #000;
+	
+	}
+*,:after,:before{box-sizing:border-box}
+.clearfix:after,.clearfix:before{content:'';display:table}
+.clearfix:after{clear:both;display:block}
+a{color:inherit;text-decoration:none}
+
+
+.account{
+	width:100%;
+	height:100%;
+	position:absolute;
+	padding:90px 70px 50px 70px;
+
+}
+.account .ac-ov-htm,
+.account .ed-pr-htm{
+	top:0;
+	left:0;
+	right:0;
+	bottom:0;
+	position:absolute;
+	transform:rotateY(180deg);
+	backface-visibility:hidden;
+}
+.account .ac-ov,
+.account .ed-pr,
+.account-form .group .check{
+	display:none;
+}
+.account .tab,
+.account-form .group .label,
+.account-form .group .button{
+	text-transform:uppercase;
+}
+.account .tab{
+	font-size:22px;
+	margin-right:15px;
+	padding-bottom:5px;
+	margin:0 15px 10px 0;
+	display:inline-block;
+	border-bottom:2px solid transparent;
+}
+.account .ac-ov + .tab,
+.account .ed-pr + .tab{
+	color:rgba(255,255,255,.2);;
+}
+.account .ac-ov:checked + .tab,
+.account .ed-pr:checked + .tab{
+	color:#fff;
+	border-color:#1161ee;
+}
+.account-form{
+	min-height:345px;
+	position:relative;
+	perspective:1000px;
+	transform-style:preserve-3d;
+}
+.account-form .group{
+	margin-bottom:15px;
+}
+.account-form .group .label,
+.account-form .group .input,
+.account-form .group .button{
+	width:100%;
+	color:#fff;
+	display:block;
+}
+.account-form .group .input,
+.account-form .group .button{
+	border:none;
+	padding:15px 20px;
+	border-radius:25px;
+	background:rgba(255,255,255,.1);
+}
+.account-form .group input[data-type="password"]{
+	-webkit-text-security:circle;
+}
+.account-form .group .label{
+	color:#aaa;
+	font-size:12px;
+}
+.account-form .group .button{
+	background:green ;
+}
+.account-form .group label .icon{
+	width:15px;
+	height:15px;
+	border-radius:2px;
+	position:relative;
+	display:inline-block;
+	background:rgba(255,255,255,.1);
+}
+.account-form .group label .icon:before,
+.account-form .group label .icon:after{
+	content:'';
+	width:10px;
+	height:2px;
+	background:#fff;
+	position:absolute;
+	transition:all .2s ease-in-out 0s;
+}
+.account-form .group label .icon:before{
+	left:3px;
+	width:5px;
+	bottom:6px;
+	transform:scale(0) rotate(0);
+}
+.account-form .group label .icon:after{
+	top:6px;
+	right:0;
+	transform:scale(0) rotate(0);
+}
+.account-form .group .check:checked + label{
+	color:#fff;
+}
+.account-form .group .check:checked + label .icon{
+	background:#1161ee;
+}
+.account-form .group .check:checked + label .icon:before{
+	transform:scale(1) rotate(45deg);
+}
+.account-form .group .check:checked + label .icon:after{
+	transform:scale(1) rotate(-45deg);
+}
+.account .ac-ov:checked + .tab + .ed-pr + .tab + .account-form .ac-ov-htm{
+	transform:rotate(0);
+}
+.account .ed-pr:checked + .tab + .account-form .ed-pr-htm{
+	transform:rotate(0);
+}
+
+.hr{
+	height:2px;
+	margin:30px 0 20px 0;
+	background:rgba(255,255,255,.2);
+}
+.foot-lnk{
+	text-align:center;
+}

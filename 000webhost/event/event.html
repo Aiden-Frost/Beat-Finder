@@ -1,0 +1,349 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Events</title>
+  
+  <meta charset="utf-8">
+  <meta name="viewport" content="width = device-width, initial-scale = 1">
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css">
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"></script>
+  <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+  <link href='http://fonts.googleapis.com/css?family=Pacifico' rel='stylesheet' type='text/css'>
+  <link href="https://fonts.googleapis.com/css?family=Handlee&display=swap" rel="stylesheet">
+  <script src="sorttable.js"></script>
+
+  <style>
+
+  
+
+  body {
+      background-image: url('images/bg/bg.jpg');
+      background-repeat: no-repeat;
+      background-attachment: fixed;
+      background-size: cover;
+  }
+  .padding{
+    padding-left: 20px;
+    padding-top: 20px;
+    padding-right: 20px;
+    padding-bottom: 20px;
+  }
+
+
+.bord {
+  border: 2px solid #292929;  
+  outline: 2px solid #505050;
+}
+
+.box{
+  background-color: gray;
+  opacity: .85;
+  }
+
+img.zoom {
+  padding: 50px;
+  transition: transform .2s; /* Animation */
+  width: 300px;
+  height: 200px;
+  margin: 0 auto;
+}
+
+.zoom:hover {
+  transform: scale(1.15); /* (150% zoom - Note: if the zoom is too large, it will go outside of the viewport) */
+}
+
+body{
+    overflow-x: hidden;
+}
+.zoom1:hover {
+  transform: scale(1.05); /* (150% zoom - Note: if the zoom is too large, it will go outside of the viewport) */
+  cursor: pointer;
+}
+.zoom2:hover {
+  transform: scale(1.15); /* (150% zoom - Note: if the zoom is too large, it will go outside of the viewport) */
+}
+
+.change{
+  color: #FFBB00;
+}
+
+.change:hover{
+  color: #FF6700;
+}
+
+
+}
+
+  </style>
+</head>
+<body>
+  <nav class= "navbar navbar-expand-md navbar-expand-sm" >
+    <div class="container-fluid" align="center">
+        <a class = "navbar-brand text" href = "#"  style="color:#FFBB00; ">
+            <img src="images/icons/logo.png" width="120px" height="60px"><br>BEATFINDER
+        </a>
+        <button class="navbar-toggler navbar-light" type = "button" data-toggle = "collapse" data-target = "#navbarResponsive" >
+            <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id = "navbarResponsive">
+            <ul class = "navbar-nav ml-auto" >
+                <li class = "nav-item">
+                    <a class = "nav-link change" href = "../Home/home.html">HOME</a>
+                </li>
+                <li class = "nav-item">
+                    <a class = "nav-link change" href = "../premium/premium.html" >PREMIUM</a>
+                </li>
+                <li class = "nav-item">
+                    <a class = "nav-link change" href = "../Login/Login.html" >LOGIN</a>
+                </li>
+                <li class = "nav-item">
+                    <a class = "nav-link change" href = "../preference/about.html"  >ABOUT US</a>
+                </li>
+            </ul>
+            <P></P><P></P>
+        </div>
+    </div>
+  </nav>   
+
+  <div class="container">
+    <h1 class="display-3" style="text-align: center;">
+      <span style="font-family: 'Handlee', cursive; color: #FFBB00; text-shadow: 1px 1px 0px rgba(255,255,255,0.1), 7px 7px 0px #FF3300;">
+          Top  
+      </span>
+      <span style="font-family: 'Handlee', cursive; color: #FF3300; text-shadow: 1px 1px 0px rgba(255,255,255,0.1), 7px 7px 0px #FFBB00; ">
+        MUSICAL
+      </span>
+      <span style="font-family: 'Handlee', cursive; color: #FFBB00; text-shadow: 1px 1px 0px rgba(255,255,255,0.1), 7px 7px 0px #FF3300;">
+          Events <br>Near 
+      </span>
+      <span style="font-family: 'Handlee', cursive; color: #FF3300; text-shadow: 1px 1px 0px rgba(255,255,255,0.1), 7px 7px 0px #FFBB00; ">
+        YOU
+      </span>
+      <span style="font-family: 'Handlee', cursive; color: #FFBB00; text-shadow: 1px 1px 0px rgba(255,255,255,0.1), 7px 7px 0px #FF3300;">
+          This Month
+      </span>
+    </h1>
+  </div>
+
+  <div class="row" style="padding-top: 30px; padding-bottom: 50px; vertical-align: middle;">
+    <div class="col-md-7" style="padding-left: 40px">
+      <table class="table sortable" style="color: white; text-align: center;" >
+        <tr style="font-size: 22px">
+          <th >
+            <span style="cursor: context-menu;">Events</span>
+          </th>
+          <th>
+            <span style="cursor: context-menu;">Place</span>
+          </th>
+          <th>
+            <span style="cursor: context-menu;">Date</span>
+          </th>
+        </tr>
+        <tr class="zoom1" style="font-size: 22px" onclick="under()">
+          <th>
+            Underside LIVE
+          </th>
+          <td>
+            Gillys's Refined, Bangalore
+          </td>
+          <td>
+            28th November, 2019
+          </td>
+        </tr>
+        <tr class="zoom1" style="font-size: 22px" onclick="f16s()">
+          <th>
+            The F16S
+          </th>
+          <td>
+            Hyatt Centric, MG Road, Bangalore
+          </td>
+          <td>
+            16th November, 2019
+          </td>
+        </tr>
+        <tr class="zoom1" style="font-size: 22px" onclick="agam()">
+          <th>
+            AGAM - Live at Skydeck
+          </th>
+          <td>
+            VR Benagluru, Bangalore
+          </td>
+          <td>
+            30th November, 2019
+          </td>
+        </tr>
+        <tr class="zoom1" style="font-size: 22px" onclick="f60()">
+          <th>
+            Five Six Zero Music Summit + Festival 2019
+          </th>
+          <td>
+            The Lalit Ashok, Bangalore
+          </td>
+          <td>
+            24th November, 2019
+          </td>
+        </tr>
+        <tr class="zoom1" style="font-size: 22px" onclick="radio1()">
+          <th>
+            Radio One Forever Rock: Tribute To Metallica
+          </th>
+          <td>
+            Gilly's Refined, Bangalore
+          </td>
+          <td>
+            23rd November, 2019
+          </td>
+        </tr>
+        
+      </table>
+    </div>
+    <div class="col-md-5" style="padding-left: 50px; padding-right: 50px; padding-top: 20px;">
+      <div class="card" id="card">
+        <img class="card-img-top" src="images/events/echoes.jpg" id="card-img">
+        <div class="card-body">
+          <h4 class="card-title" id="card-title">Echoes of Earth Music Festival, Bangalore</h4>
+          <p class="card-text" id="card-text">
+            Echoes-of-Earth is a convergence of Music, Arts, and Culture. The festival in its third edition promises a stellar International and Indian line-up with sounds of Live Electronic, Indian fusion, Soul, Jazz, Blues, Ambient, Reggae, Rock, Techno, etc.
+          </p>
+          <p>
+            Click <a href="https://in.bookmyshow.com/events/echoes-of-earth-music-festival-bangalore/ET00109287" id="link">here</a> for more info
+          </p>
+        </div>
+      </div>
+        
+      </div>
+    </div>
+
+  </div>
+
+  <script type="text/javascript">
+
+    function under() {
+
+      let img = document.getElementById("card-img");
+      img.src = "images/events/under.jpg";
+
+      let title = document.getElementById("card-title");
+      title.innerHTML = "Underside LIVE, Bangalore"
+
+      let info = document.getElementById("card-text");
+      info.innerHTML = "Gravity Talent X Atonal Music Agency presents Underside Live in Bangalore. One of the biggest metal bands in the Asian subcontinent, return to India following their landmark performances at Download Festival UK and more, to recreate the energy and intensity they have become known for. Live at Fandom by Gilly’s Redefined FOR ONE NIGHT ONLY.";
+
+      let link = document.getElementById("link");
+      link.href = "https://in.bookmyshow.com/events/underside-live/ET00111682";
+    }
+
+    function f16s() {
+      
+      let img = document.getElementById("card-img");
+      img.src = "images/events/f16s.jpg";
+
+      let title = document.getElementById("card-title");
+      title.innerHTML = "The F16S, Bangalore"
+
+      let info = document.getElementById("card-text");
+      info.innerHTML = "The F16s is a Chennai based alternative band who describe themselves as 'a pop band disguised in a rock and roll outfit’. Catchy pop vocals with grooving bass lines, synthetic keys and some upbeat drums. ‘It's hard to articulate the identity of a soul but we know it’s there.’ they tell me. ";
+
+      let link = document.getElementById("link");
+      link.href = "https://in.bookmyshow.com/events/the-f16s-live-in-bangalore/ET00116023";
+    }
+
+    function agam() {
+      
+      let img = document.getElementById("card-img");
+      img.src = "images/events/agam.jpg";
+
+      let title = document.getElementById("card-title");
+      title.innerHTML = "AGAM, Live @ Skydeck, Bangalore"
+
+      let info = document.getElementById("card-text");
+      info.innerHTML = "Come to catch the pioneers of contemporary Carnatic progressive rock music for the first time at Skydeck. Witness the magic with an unparalleled experience offered by Skydeck. <p><b>Note:</b><br> A compulsory cover charge of inr 300 will be charged at the venue.</p>";
+
+      let link = document.getElementById("link");
+      link.href = "https://in.bookmyshow.com/events/agam-live-at-skydeck/ET00115261";
+    }    
+
+    function f60() {
+      
+      let img = document.getElementById("card-img");
+      img.src = "images/events/f60.jpg";
+
+      let title = document.getElementById("card-title");
+      title.innerHTML = "Five Six Zero Music Summit + Fest, Bangalore"
+
+      let info = document.getElementById("card-text");
+      info.innerHTML = "Through a series of showcases, a music summit, panel discussions, masterclasses, culminating into the music festival comprising of 4 stages & 30+ artists, we want people to have a chance to engage with a living, breathing version of Bangalore's dance music scene like never before. ";
+
+      let link = document.getElementById("link");
+      link.href = "https://in.bookmyshow.com/events/five-six-zero-music-summit-festival-2019/ET00116624";
+    }
+
+    function radio1() {
+      
+      let img = document.getElementById("card-img");
+      img.src = "images/events/radio1.jpg";
+
+      let title = document.getElementById("card-title");
+      title.innerHTML = "Radio One Forever Rock: Tribute To Metallica, Bangalore"
+
+      let info = document.getElementById("card-text");
+      info.innerHTML = "94.3 Radio One Forever Rock and Fandom At Gilly's Redefined present: A tribute to Metallica with the Kishan Baalaji Collective. Join some of Bangalore's finest musicians as they come together to take you through the 80's soundscape of heavy, thrash metal.";
+
+      let link = document.getElementById("link");
+      link.href = "https://in.bookmyshow.com/events/radio-one-forever-rock-tribute-to-metallica/ET00117192";
+    }
+
+
+  </script>
+
+  <div class="jumbotron jumbotron-fluid">
+    <div class="container-fluid">
+      <div class="row">
+        <div class="col-md-4" style="padding-left: 50px">
+          Address:<br>
+          <abbr title="Clik to Open in Google Maps!"><a href="https://goo.gl/maps/S87JDFJmMEv1gRu19" target="_blank">PES UNIVERSITY</a></abbr><br>
+          Outer Ring Rd,<br>
+          Banashankari 3rd Stage, <br>
+          Bengaluru-560085<br>
+        </div>
+        <div class="col-md-4">
+          -OUR MISSION-<br>
+          We at LARA aim to provide all the music enthusiasts with high quality music that is easily accessible. 
+          Music is the heart and Soul of Humanity, and should be enjoyed by all.
+        </div>
+        <div class="col-md-1"></div>
+        <div class="col-md-3 " style="padding-left: 30px; padding-top: 20px" >
+          <p>Follow Us On</p>
+          <div class="row">
+            <div class="col-md-3" style="padding-top: 8px">
+              <a href="https://www.facebook.com/" target="_blank">
+                <img src="images/icons/fb.png" width="50px" height="50px">
+              </a>
+            </div>
+            <div class="col-md-3" style="padding-top: 8px">
+              <a href="https://www.instagram.com/" target="_blank">
+                <img src="images/icons/insta.png" width="50px" height="50px">
+              </a>
+            </div>
+            <div class="col-md-3" style="padding-top: 8px">
+              <a href="https://twitter.com/" target="_blank">
+                <img src="images/icons/twit.png" width="50px" height="50px">
+              </a>
+            </div>
+            <div class="col-md-3" style="padding-top: 8px">
+              <a href="https://www.reddit.com/" target="_blank">
+                <img src="images/icons/reddit.png" width="50px" height="50px" >
+              </a>
+            </div>
+          </div>
+          <div class="text-secondary" align="right" style="padding-top: 30px">
+            &copy LARA INC.
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+  </body>
+</html>

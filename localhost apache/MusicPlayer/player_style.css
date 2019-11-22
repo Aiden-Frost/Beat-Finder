@@ -1,0 +1,108 @@
+@import url('https://fonts.googleapis.com/css?family=Poppins:400,500,700');
+
+html,body{
+  height: 100%;
+  width: 100%;
+  font-family: "Poppins" , sans-serif;
+  color: #222;
+  background-position: center;
+  background-repeat: no-repeat;
+  background-attachment: fixed;
+  background-size: cover;
+
+}
+
+/*Scroll bar*/
+/* width */
+::-webkit-scrollbar {
+  width: 4px;
+}
+
+/* Track */
+::-webkit-scrollbar-track {
+  background: #f1f1f1;
+}
+
+/* Handle */
+::-webkit-scrollbar-thumb {
+  background: gray;
+}
+
+/* Handle on hover */
+::-webkit-scrollbar-thumb:hover {
+  background: #555;
+}
+
+
+.embeddedvideo{
+	min-width:525px;
+	max-width:560px;
+	padding-left:20px;
+	padding-right:15px;
+	padding-bottom:15px;
+	padding-top:15px;
+}
+
+.suggestions{
+	max-width: 530px;
+	min-width: 263px;
+	padding-top: 20px;
+}
+
+.recently_played{
+	padding-top: 20px;
+}
+
+.d-none d-lg-block{
+	width: 100%;
+}
+
+.table1{
+	color: white;
+	cursor: pointer;
+}
+tr{
+	cursor: pointer;
+}
+.container{
+	height:565px;
+	overflow:auto; 
+}
+
+.img{
+	width:100%;
+}
+
+.tcol{
+	min-width:140.6667px;
+	max-width:166.6667px;
+}
+
+.ad_cover{
+	padding-bottom:15px;
+	padding-top:45px;
+}
+
+.tbody{
+	overflow: scroll;
+	max-height: 608px;
+	max-width: 10px;
+}
+
+iframe{
+	display:block;
+	width:100%;
+}
+
+.advertisement{
+	margin:auto;
+	bottom:10px;
+	left:10px;
+	min-width: 480px;
+	width:41.667%;
+	height:145px;
+	border:1px dotted black;
+	padding-bottom:15px;
+	padding-top:15px;
+	
+}

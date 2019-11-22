@@ -1,0 +1,76 @@
+@import url('https://fonts.googleapis.com/css?family=Poppins:400,500,700');
+
+html,body{
+  height: 100%;
+  width: 100%;
+  background-image: url("https://i.pinimg.com/originals/62/da/98/62da98a3844145e89cd5aaf257d66eea.png");
+  background-position: center;
+  background-repeat: no-repeat;
+  background-attachment: fixed;
+  background-size: cover;
+  position: relative;
+}
+.sorted .input{
+	width:100%;
+	color:black;
+	display:block;
+	border:none;
+	padding:15px 20px;
+	border-radius:25px;
+	background:rgba(255,255,255,.5);
+}
+select option {
+
+	width:150%;color:black;display:block;border:none;padding:15px 20px;border-radius:25px;background:rgba(255,255,255,.5);
+	
+	}
+tr{
+	cursor: pointer;
+}
+
+/*Scroll bar*/
+/* width */
+::-webkit-scrollbar {
+  width: 4px;
+}
+
+/* Track */
+::-webkit-scrollbar-track {
+  background: #f1f1f1;
+}
+
+/* Handle */
+::-webkit-scrollbar-thumb {
+  background: gray;
+}
+
+/* Handle on hover */
+::-webkit-scrollbar-thumb:hover {
+  background: #555;
+}
+
+.sort{
+	max-height: 588px;
+}
+
+.tcol{
+	min-width:180.6667px;
+	max-width:222.6667px;
+}
+
+.container{
+	height:565px;
+	overflow:auto; 
+}
+.table1{
+	color: white;
+	max-height: 508px;
+}
+.tbody{
+	overflow: scroll;
+	max-height: 508px;
+}
+
+.select{
+	left: 200px;
+}
